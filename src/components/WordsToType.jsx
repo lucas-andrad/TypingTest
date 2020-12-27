@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react';
+import InputTyping from './InputTyping';
 import Loading from './Loading';
 import './WordsToType.css';
 
@@ -16,14 +17,14 @@ export default function WordsToType() {
       'https://random-word-api.herokuapp.com/word?number=30'
     );
     const data = await response.json();
-    setWords(data);
+    setWords(data.join(' '));
     setLoaded(true);
   };
 
   return (
     <div className="words">
       <div>
-        {!loaded ? <Loading /> : words.map((word) => <span>{word} </span>)}
+       <span>{!loaded ? <Loading /> : words}</span>
       </div>
       <button onClick={() => fetchWords()}>Fetch</button>
     </div>
