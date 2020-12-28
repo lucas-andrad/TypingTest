@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './InputTyping.css';
 
-export default function InputTyping() {
+export default function InputTyping(props) {
   const [typed, setTyped] = useState('');
+  const { words, verifier } = props;
+
   function verifyLetters(target) {
     setTyped(target.value);
+    verifier(target)
   }
   return (
     <textarea

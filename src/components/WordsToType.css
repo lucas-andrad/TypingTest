@@ -1,4 +1,7 @@
-/* .words {
-    display: flex;
-    flex-direction: column;
-} */
+.green {
+    background-color: greenyellow;
+}
+
+.red {
+    background-color: red;
+}
